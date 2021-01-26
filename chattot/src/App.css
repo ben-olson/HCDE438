@@ -1,0 +1,28 @@
+.App {
+  text-align: center;
+  background: #141E30;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #243B55, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #243B55, #141E30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  color: #fff;
+  font-size: 4rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  background: url(noun_parrots_3369821.svg);
+  height: 4rem;
+  width: 4rem;
+  margin-top: 1.2rem;
+  background-repeat: no-repeat;
+  background-position: center;
+}
