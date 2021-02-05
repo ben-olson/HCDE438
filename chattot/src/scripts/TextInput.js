@@ -1,24 +1,28 @@
 import {useState} from 'react'
+import {keyPressed} from './utils'
 
 function TextInput(props) {
+
   const [text, setText] = useState('')
+
   function sendMessage(){
     if(text==='') return // skip the function
     props.send(text)
     setText('')
   }
-  function keyPressed(e){
-    if(e.key==='Enter') {
-      sendMessage()
-    }
-  }
+
   return <footer className="text-input">
     <input 
       className="input"
-      placeholder="Write your message"
+      placeholder={props.placeholder}
       value={text}
       onChange={e=> setText(e.target.value)}
-      onKeyPress={keyPressed}
+      onKeyPress={e=> {
+        if(keyPressed(e, 'Enter')) {
+          sendMessage()
+        }
+      }
+    }
     />
     <button 
       className="send-button"

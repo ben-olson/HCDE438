@@ -1,0 +1,21 @@
+.message {
+  background: var(--red);
+  color: #fff;
+  border-radius: 0.75rem;
+  padding: 0.3rem 1rem 0.4rem 1rem;
+  display: inline-block;
+  width: max-content;
+  max-width: 45ch;
+  word-wrap: break-word;
+}
+
+.messages > * {
+  margin-bottom: 2rem;
+}
+
+.messages {
+  display: flex;
+  flex-direction: column-reverse;
+  overflow: auto;
+  height: calc(100vh - 20rem);
+}

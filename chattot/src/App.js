@@ -1,16 +1,22 @@
 import { useState } from 'react';
-import './App.css';
-import './TextInput';
-import TextInput from './TextInput';
-import Message from './Message';
+import './styles/App.css';
+import './scripts/TextInput';
+import TextInput from './scripts/TextInput';
+import Message from './scripts/Message';
+import UsernameInput from './scripts/NamePicker';
 
 function App() {
   const [messages, setMessages] = useState([{text:'hello'}])
+  const [username, setUsername] = useState('')
   return (
     <div className="App">
       <header className="header">
         <div className="logo"></div>
         <h2>Chattot</h2>
+        <UsernameInput
+          placeholder = "Set Username"
+          saveUsername = {t=> setUsername(t)}
+        />
       </header>
 
       <main className="messages">
@@ -21,7 +27,7 @@ function App() {
 
       </main>
       <TextInput
-        placeholder = "write your message"
+        placeholder = "Write your message..."
         send = {t=> setMessages( [{text:t}, ...messages] )}
       />
     </div>

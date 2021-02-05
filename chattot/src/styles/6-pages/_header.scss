@@ -1,0 +1,16 @@
+.header {
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.logo {
+  background: url(../static/parrot.svg);
+  height: 2.5rem;
+  width: 2.5rem;
+  margin-right: 1rem;
+  background-repeat: no-repeat;
+  background-position: center;
+}
