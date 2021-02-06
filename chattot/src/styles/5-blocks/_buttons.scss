@@ -36,21 +36,41 @@
   outline: none;
   height: 2rem;
   width: 2rem;
-} &:disabled {
-  cursor: default;
-} &__send_message {
-  position: absolute;
-  right: calc(10vw + 0.7rem);
+  &:disabled {
+    cursor: default;
+  } &__send_message {
+    position: absolute;
+    right: calc(10vw + 0.7rem);
+  } &__confirm_username {
+    transition: none;
+  }
 }
 
 .icon {
-  height: 1.8rem;
-  width: 1.8rem;
+  fill: white;
   position: relative;
-  background-repeat: no-repeat;
-  background-size: cover;
-} &__send_message {
-  left: 0.1rem;
-  bottom: 0.05rem;
-  padding-bottom: 0.1rem;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  &__send_message {
+    background: url(../static/send.svg);
+    height: 1.8rem;
+    width: 1.8rem;
+    left: 0.1rem;
+    bottom: 0.05rem;
+    padding-bottom: 0.1rem;
+  } &__set_username {
+    background: url(../static/user.svg);
+    height: 1.25rem;
+    width: 1.25rem;
+    left: 0.3rem;
+    bottom: 0.05rem;
+    padding-bottom: 0.1rem;
+    transition: none;
+  } &__confirm_username {
+    background: url(../static/check.svg);
+    height: 1.37rem;
+    width: 1.37rem;
+    left: 0.25rem;
+    transition: none;
+  }
 }

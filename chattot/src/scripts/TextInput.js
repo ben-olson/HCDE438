@@ -11,9 +11,9 @@ function TextInput(props) {
     setText('')
   }
 
-  return <footer className="text-input">
+  return <footer className="[ container__message ]">
     <input 
-      className="input"
+      className="[ input input__message ]"
       placeholder={props.placeholder}
       value={text}
       onChange={e=> setText(e.target.value)}
@@ -25,9 +25,9 @@ function TextInput(props) {
     }
     />
     <button 
-      className="send-button"
+      className="[ button button__send_message ]"
       onClick={sendMessage} disabled={!text}>
-      <div className="send-icon"></div>
+      <div className="[ icon icon__send_message ]"></div>
     </button>
   </footer>
 }

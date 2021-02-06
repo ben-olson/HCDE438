@@ -15,7 +15,7 @@ function UsernameInput(props) {
     return (
       <div className="[ container__username ]">
         <input
-          className="[ input__username ]"
+          className="[ input input__username ]"
           value={username}
           onChange = {e=> setUsername(e.target.value)}
           onKeyPress={e=> {
@@ -27,23 +27,23 @@ function UsernameInput(props) {
         >
         </input>
         <button 
-          className="[ button__set ]"
+          className="[ button button__confirm_username ]"
           onClick={sendUsername}
         >
-          <div className="[ icon__set ]">B</div>
+          <div className="[ icon icon__confirm_username ]"></div>
         </button>
       </div>
     );
   }
 
   return (
-    <div name="[ container__username ]">
-      <div
+    <div className="[ container__username ]">
+      <div className="[ username bold ]"
       >{username || props.placeholder}</div>
       <button
-        className="[ button button__confirm ]"
+        className="[ button button__set_username]"
         onClick={()=> setShowUserInput(true)}>
-        <div className="[ icon icon__confirm ]">C</div>
+        <div className="[ icon icon__set_username ]"></div>
       </button>
 
     </div>
