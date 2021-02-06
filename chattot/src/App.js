@@ -6,7 +6,7 @@ import Message from './scripts/Message';
 import UsernameInput from './scripts/NamePicker';
 
 function App() {
-  const [messages, setMessages] = useState([{text:'hello'}])
+  const [messages, setMessages] = useState([{text:'hello', username:''}])
   const [username, setUsername] = useState('')
   return (
     <div className="App">
@@ -28,7 +28,7 @@ function App() {
       </main>
       <TextInput
         placeholder = "Write your message..."
-        send = {t=> setMessages( [{text:t}, ...messages] )}
+        send = {t=> setMessages( [{text:t, username:username}, ...messages] )}
       />
     </div>
   );

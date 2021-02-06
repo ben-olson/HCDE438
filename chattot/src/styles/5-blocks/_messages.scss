@@ -1,12 +1,18 @@
 .message {
-  background: var(--red);
-  color: #fff;
-  border-radius: 0.75rem;
-  padding: 0.3rem 1rem 0.4rem 1rem;
   display: inline-block;
-  width: max-content;
-  max-width: 45ch;
-  word-wrap: break-word;
+  &__text {
+    background: var(--red);
+    color: #fff;
+    border-radius: 0.75rem;
+    padding: 0.3rem 1rem 0.4rem 1rem;
+    width: max-content;
+    max-width: 45ch;
+    word-wrap: break-word;
+  } &__username {
+    font-size: 0.6rem;
+    color: rgba(0, 0, 0, 0.5);
+    margin-bottom: 0.3rem;
+  }
 }
 
 .messages > * {

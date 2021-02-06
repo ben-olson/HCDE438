@@ -226,16 +226,25 @@ strong,
 }
 
 .message {
+  display: inline-block;
+}
+
+.message__text {
   background: var(--red);
   color: #fff;
   border-radius: 0.75rem;
   padding: 0.3rem 1rem 0.4rem 1rem;
-  display: inline-block;
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
   max-width: 45ch;
   word-wrap: break-word;
+}
+
+.message__username {
+  font-size: 0.6rem;
+  color: rgba(0, 0, 0, 0.5);
+  margin-bottom: 0.4rem;
 }
 
 .messages > * {
