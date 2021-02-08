@@ -7,14 +7,13 @@ import UsernameInput from './scripts/NamePicker';
 
 function App() {
   const [messages, setMessages] = useState([{text:'hello', username:''}])
-  const [username, setUsername] = useState('')
+  const [username, setUsername] = useState(localStorage.getItem('username') || '')
   return (
     <div className="App">
       <header className="header">
         <div className="logo"></div>
         <h2>Chattot</h2>
         <UsernameInput
-          placeholder = "Set Username"
           saveUsername = {t=> setUsername(t)}
         />
       </header>
@@ -28,7 +27,7 @@ function App() {
       </main>
       <TextInput
         placeholder = "Write your message..."
-        send = {t=> setMessages( [{text:t, username:username}, ...messages] )}
+        send = {t=> setMessages( [{text:t, username:username, date:new Date()}, ...messages] )}
       />
     </div>
   );

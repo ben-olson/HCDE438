@@ -3,12 +3,13 @@ import {keyPressed} from './utils'
 
 function UsernameInput(props) {
 
-  const [username, setUsername] = useState('')
+  const [username, setUsername] = useState(localStorage.getItem('username') || '')
   const [showUserInput, setShowUserInput] = useState(false)
   
   function sendUsername() {
     props.saveUsername(username)
     setShowUserInput(false)
+    localStorage.setItem('username', username)
   }
 
   if (showUserInput) {
@@ -38,8 +39,7 @@ function UsernameInput(props) {
 
   return (
     <div className="[ container__username ]">
-      <div className="[ username bold ]"
-      >{username || props.placeholder}</div>
+      <div className="[ username bold ]">{username || 'Set Username'}</div>
       <button
         className="[ button button__set_username]"
         onClick={()=> setShowUserInput(true)}>
