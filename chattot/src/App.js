@@ -5,10 +5,23 @@ import TextInput from './scripts/TextInput';
 import Message from './scripts/Message';
 import UsernameInput from './scripts/NamePicker';
 import {db, useDB} from './scripts/db';
+import {BrowserRouter, Route, Switch } from 'react-router-dom';
 
-function App() {
-  const messages = useDB()
+function Wrap() {
+  return <BrowserRouter>
+    <Switch>
+      <Route exact path='/' component={App} />
+      <Route exact path='/:room' component={App} /> 
+    </Switch>
+  </BrowserRouter>
+}
+
+function App(props) {
+  const room = props.match.params.room || 'home'
+  const messages = useDB(room)
   const [username, setUsername] = useState(localStorage.getItem('username') || '')
+  // console.log("ROOM = ", room)
+
   return (
     <div className="App">
       <header className="header">
@@ -29,10 +42,10 @@ function App() {
       </main>
       <TextInput
         placeholder = "Write your message..."
-        send = {t=> db.send({text:t, name:username, date:new Date()})}
+        send = {t=> db.send({text:t, name:username, date:new Date(), room:room})}
       />
     </div>
   );
 }
 
-export default App;
+export default Wrap;

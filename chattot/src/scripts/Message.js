@@ -1,8 +1,7 @@
 function Message(props) {
-  console.log(props.date)
   return (
     <div className="[ message__container ]"
-    style={{flexDirection:props.isMe ? 'row' : 'row-reverse'}}
+    style={{flexDirection:props.isMe ? 'row-reverse' : 'row'}}
     >
       <div className="[ message ]">
         <div className="[ message__username bold ]">{props.name}</div>
