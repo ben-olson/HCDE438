@@ -229,6 +229,12 @@ strong,
   display: inline-block;
 }
 
+.message__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .message__text {
   background: var(--red);
   color: #fff;
@@ -244,7 +250,7 @@ strong,
 .message__username {
   font-size: 0.6rem;
   color: rgba(0, 0, 0, 0.5);
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.3rem;
 }
 
 .messages > * {

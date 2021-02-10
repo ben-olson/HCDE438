@@ -1,5 +1,8 @@
 .message {
   display: inline-block;
+  &__container {
+    display: flex;
+  }
   &__text {
     background: var(--red);
     color: #fff;
