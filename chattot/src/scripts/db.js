@@ -30,7 +30,7 @@ function useDB(room) {
             if (type==='added') add({...doc.data(),id:doc.id})
             if (type==='removed') remove(doc.id)
         }))
-    }, [])
+    }, [room])
     return messages
 }
 
@@ -45,13 +45,14 @@ db.delete = function(id) {
 export { db, useDB }
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCxnHdHGicbw16DmQfEbNVy7XD6ENprVNQ",
-    authDomain: "chatter2021-2b8fb.firebaseapp.com",
-    projectId: "chatter2021-2b8fb",
-    storageBucket: "chatter2021-2b8fb.appspot.com",
-    messagingSenderId: "778098356347",
-    appId: "1:778098356347:web:c396b31d7a0a5c0c6c32de"
-};
+    apiKey: "AIzaSyCHVLRjXRfzpuwj4KRNcqN_rnP6drTVToE",
+    authDomain: "chattot.firebaseapp.com",
+    projectId: "chattot",
+    storageBucket: "chattot.appspot.com",
+    messagingSenderId: "637287877044",
+    appId: "1:637287877044:web:1f2f53f109313a27fa8ae1",
+    measurementId: "G-73GRQ0PKCM"
+  };
 
 firebase.initializeApp(firebaseConfig)
 store = firebase.firestore()
